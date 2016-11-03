@@ -1,7 +1,9 @@
 package CPU;
 
-/**
- * Created by SirGoody on 11/3/16.
- */
+//Spencer Kolbus and Chase Goodman created on Nov 3rd, 2016
+
 public class main {
+
+
+
 }
