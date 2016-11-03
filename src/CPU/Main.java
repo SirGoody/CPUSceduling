@@ -4,8 +4,10 @@ package CPU;
 
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
@@ -22,13 +24,26 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        primaryStage.setTitle("CS 376 CPU Scheduling");
+        primaryStage.setTitle("CS 376 CPU Scheduling"); //Sets the title to the stage
 
-        BorderPane layout = new BorderPane();
+        BorderPane layout = new BorderPane(); //Creates the BorderPane layout
 
-        Button done = new Button();
+        Button done = new Button("Finished");
+        done.setOnAction(event ->  {
+            System.out.print("I AM WORKING");
+        });
+
+        Button next = new Button("Next Job");
+        done.setOnAction(event ->  {
+
+        });
+
         TextField jobID = new TextField();
+        jobID.setPromptText("Enter job ID");
+
         TextField burstTime = new TextField();
+        burstTime.setPromptText("Enter burst time here");
+
         ChoiceBox<String> choiceBox = new ChoiceBox<>();
 
         //getItems returns the ObservableList object which you can add items to
@@ -41,6 +56,13 @@ public class Main extends Application{
         layout.setCenter(burstTime);
         layout.setBottom(done);
         layout.setTop(choiceBox);
+        layout.setRight(next);
+
+        BorderPane.setAlignment(done, Pos.CENTER);
+        BorderPane.setAlignment(burstTime, Pos.CENTER);
+        BorderPane.setAlignment(jobID, Pos.CENTER);
+        BorderPane.setAlignment(next, Pos.CENTER);
+        BorderPane.setAlignment(choiceBox, Pos.CENTER);
 
         Scene scene = new Scene(layout, 500, 250);
         primaryStage.setScene(scene);
