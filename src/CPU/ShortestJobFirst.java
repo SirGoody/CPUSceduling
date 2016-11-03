@@ -2,7 +2,7 @@ package CPU;
 
 import java.lang.reflect.Array;
 
-public class shortestJobFirst {
+public class ShortestJobFirst {
 
     public void schedule(Array[][] jobs[][]) {
         Array[][] shortestJob = new Array[jobs.length][]{
